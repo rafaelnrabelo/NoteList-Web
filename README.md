@@ -28,7 +28,7 @@
   - Editar anotação.
   - Apagar anotação.
   
-#### Dependências do Front-end
+## Dependências
   - ReactJS
   - React Icons
   - Axios
@@ -37,14 +37,12 @@
     
    
 ## Testando:
-   1. Clone o repositorio usando `git clone https://github.com/rafaelnrabelo/NoteList-Web.git`
-   2. Mova para a pasta clonada usando `cd NoteList`
-   
-  #### Web
   Abra o <a href="https://notelistweb.netlify.app">
     Site
     </a> ou siga os passos abaixo para rodar sua propria aplicação.
-   1. Instale todas dependecias usando `yarn install`
-   2. Adicione a url de conexão do backend no campo `API_URL` no arquivo `.env.json` na pasta `src`
-   3. Adicione o ID do seu app do Facebook no campo `FACEBOOK_ID` no arquivo `.env.json` na pasta `src`
-   4. Execute `yarn start` para iniciar a aplicação web.
+   1. Clone o repositorio usando `git clone https://github.com/rafaelnrabelo/NoteList-Web.git`
+   2. Mova para a pasta clonada usando `cd NoteList-Web`
+   3. Instale todas dependecias usando `yarn install`
+   4. Adicione a url de conexão do backend no campo `API_URL` no arquivo `.env.json` na pasta `src`
+   5. Adicione o ID do seu app do Facebook no campo `FACEBOOK_ID` no arquivo `.env.json` na pasta `src`
+   6. Execute `yarn start` para iniciar a aplicação web.
