@@ -1,0 +1,802 @@
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #888;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  transition: background-color 0.2s, color 0.1s;
+}
+
+.Container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 0 0;
+  margin: 0 0;
+  max-width: 100%;
+}
+
+.ProfileModal .CloseModal {
+  border: 0;
+  background-color: transparent;
+  height: 24px;
+  width: 24px;
+  color: #999;
+  position: absolute;
+  cursor: pointer;
+  left: 94%;
+  top: 1%;
+  transition: background-color 0.2s;
+}
+
+.ProfileModal .CloseModal:hover {
+  color: #777;
+}
+
+.ProfileModal .ModalContainerLogin {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+}
+
+.ProfileModal .ModalContainerLoginDark {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  background-color: #222;
+}
+
+.ProfileModal img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.ProfileModal .ModalContainerLogin h1 {
+  margin-top: 30px;
+  font-weight: bold;
+  color: #333;
+  font-size: 24px;
+}
+
+.ProfileModal .ModalContainerLoginDark h1 {
+  margin-top: 30px;
+  font-weight: bold;
+  color: #eee;
+  font-size: 24px;
+}
+
+.ProfileModal .ModalContainerLogin span {
+  margin-top: 30px;
+  color: #333;
+  font-size: 20px;
+}
+
+.ProfileModal .ModalContainerLoginDark span {
+  margin-top: 30px;
+  color: #eee;
+  font-size: 20px;
+}
+
+.LoginButton {
+  background-color: #4267b2;
+  height: 50px;
+  width: 275px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: "row";
+  border: 0;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 60px;
+  transition: background-color 0.2s;
+}
+
+.LoginButton .FBIcon {
+  margin-right: 5px;
+}
+
+.LoginButton:hover {
+  background-color: #2957b3;
+}
+
+.LoginButton p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ProfileModal .ModalContainerLogged {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+}
+
+.ProfileModal .ModalContainerLoggedDark {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  background-color: #222;
+}
+
+.ProfileModal .ModalContainerLogged img {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+}
+
+.ProfileModal .ModalContainerLogged h1 {
+  margin-top: 30px;
+  font-weight: bold;
+  color: #333;
+  font-size: 24px;
+}
+
+.ProfileModal .ModalContainerLoggedDark h1 {
+  margin-top: 30px;
+  font-weight: bold;
+  color: #eee;
+  font-size: 24px;
+}
+
+.ProfileModal .ModalContainerLogged span {
+  color: #666;
+  font-size: 18px;
+}
+
+.ProfileModal .ModalContainerLoggedDark span {
+  color: #eee;
+  font-size: 18px;
+}
+
+.ProfileModal .ModalDelete {
+  background-color: #ff4a4a;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  width: 200px;
+  border-radius: 21px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: background-color 0.2s;
+}
+
+.ProfileModal .ModalDelete:hover {
+  background-color: #fd3636;
+}
+
+.ProfileModal .ModalDelete p {
+  margin-left: 5px;
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.ModalDelete .ModalDeleteIcon {
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+}
+
+.ProfileModal .ModalLoggout {
+  background-color: #4a9bff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 110px;
+  border-radius: 20px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.ProfileModal .ModalLoggout:hover {
+  background-color: #2a89fc;
+}
+
+.ProfileModal .ModalLoggout p {
+  margin-left: 5px;
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.ModalLoggout .ModalLoggoutIcon {
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+}
+
+.Header {
+  width: 100%;
+  height: 48px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  padding-right: 30px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.HeaderDark {
+  width: 100%;
+  height: 48px;
+  background-color: #222;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  padding-right: 30px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ProfileButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.ProfileButton:hover {
+  opacity: 0.8;
+}
+
+.ProfileButton img {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.ProfileButton h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.ThemeSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: opacity 0.2s;
+}
+
+.ThemeSwitch:hover {
+  opacity: 0.6;
+}
+
+.SaveContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  color: #da552f;
+}
+
+.SaveContainer p {
+  color: #444;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.SaveContainer span {
+  color: #555;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.SaveContainer button {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  color: #da552f;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.SaveContainer button:hover {
+  opacity: 0.6;
+}
+
+.AddToDoButton {
+  display: flex;
+  flex-direction: row;
+  border: 0;
+  width: 45px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  color: #da552f;
+  margin-right: 15px;
+  margin-left: auto;
+}
+
+.AddToDoButton:hover {
+  opacity: 0.6;
+}
+
+.DeleteNote {
+  display: flex;
+  flex-direction: row;
+  border: 0;
+  width: 22px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  color: #da552f;
+}
+
+.DeleteNote:hover {
+  opacity: 0.6;
+}
+
+.SideBar {
+  display: block;
+  height: 100vh;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.HideSideBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 50%;
+  left: 15%;
+  transition: all 0.2s;
+}
+
+.HideSideBar .HideSideBarButton {
+  display: flex;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  border-radius: 20px;
+  color: rgb(0, 0, 0, 0.2);
+}
+
+.HideSideBar .HideSideBarButton:hover {
+  color: rgb(0, 0, 0, 0.3);
+  background-color: rgb(0, 0, 0, 0.08);
+}
+
+.HideSideBar .HideSideBarButtonDark {
+  display: flex;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  border-radius: 20px;
+  color: rgb(255, 255, 255, 0.2);
+}
+
+.HideSideBar .HideSideBarButtonDark:hover {
+  color: rgb(255, 255, 255, 0.3);
+  background-color: rgb(255, 255, 255, 0.05);
+}
+
+.AddNoteContainer {
+  display: flex;
+  position: absolute;
+  z-index: 3;
+  right: 5%;
+  top: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.PreviewPlaceholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 10px;
+  opacity: 0;
+}
+
+@media only screen and (min-height: 900px) {
+  .AddNoteContainer {
+    top: 94%;
+  }
+}
+
+@media only screen and (max-width: 1230px) {
+  .PreviewPlaceholder {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 1230px) {
+  .PreviewPlaceholder {
+    font-size: 16px;
+  }
+}
+
+.AddNote {
+  display: flex;
+  border: 0;
+  width: 2.7vw;
+  height: 2.7vw;
+  min-width: 30px;
+  min-height: 30px;
+  max-height: 40px;
+  max-width: 40px;
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #da552f;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.AddNote:hover {
+  background-color: #c73b14;
+}
+
+.PreviewsContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-block-start: 10px;
+  padding-block-end: 52px;
+  margin-top: 48px;
+  align-items: center;
+}
+
+.PreviewsContainer::-webkit-scrollbar {
+  width: 5px;
+}
+
+.PreviewsContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.PreviewsContainer::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.PreviewsContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.NotePreviewContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 0;
+  width: 14vw;
+  border-radius: 5px;
+  padding-right: 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+.NotePreviewContainerDark {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 0;
+  width: 14vw;
+  border-radius: 5px;
+  padding-right: 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06), 0 3px 10px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.4s;
+}
+
+.NotePreviewContainer:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.NotePreviewContainerDark:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.NotePreviewContainerSelected {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #da552f;
+  border: 0;
+  width: 14vw;
+  border-radius: 5px;
+  padding-right: 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+}
+
+.NotePreviewContainerSelected:hover {
+  background-color: #df6f50;
+}
+
+.NotePreviewContainerSelected .TitlePreview {
+  color: #fff;
+  font-size: 14px;
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+
+.NotePreviewContainerSelected button {
+  display: none;
+}
+
+.NotePreviewContainerSelected .Updated_at {
+  color: #fff;
+  font-size: 10px;
+}
+
+.NotePreviewContainer .TitlePreview {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+
+.NotePreviewContainerDark .TitlePreview {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+
+.NotePreviewContainer button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background-color: transparent;
+  color: #da552f;
+  cursor: pointer;
+}
+
+.NotePreviewContainerDark button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background-color: transparent;
+  color: #eee;
+  cursor: pointer;
+}
+
+.NotePreviewContainer button:hover {
+  opacity: 0.8;
+}
+
+.NotePreviewContainerDark button:hover {
+  opacity: 0.6;
+}
+
+.UpdatedAtContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.NotePreviewContainer .Updated_at {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 10px;
+}
+
+.NotePreviewContainerDark .Updated_at {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+}
+
+.NoteContainer {
+  margin-left: 15vw;
+  width: 100vw;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.2s;
+}
+
+.PlaceholderContainer {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+  align-items: center;
+  justify-content: center;
+}
+
+.NotePlaceholder {
+  color: rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+}
+
+.Note {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 70px);
+  overflow: hidden;
+  margin-left: 40px;
+  padding-bottom: 40px;
+  margin-top: 70px;
+}
+
+.Note .TitleInput {
+  border: 0;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: transparent;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Note .TitleInputDark {
+  border: 0;
+  color: #eee;
+  background-color: transparent;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Note .TitleInput::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Note .TitleInputDark::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.Note .DescriptionInput {
+  border: 0;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: transparent;
+  font-size: 18px;
+  line-height: 1.4;
+  width: 75vw;
+  resize: none;
+  margin-bottom: 5px;
+}
+
+.Note .DescriptionInputDark {
+  border: 0;
+  color: #eee;
+  background-color: transparent;
+  font-size: 18px;
+  line-height: 1.4;
+  width: 75vw;
+  resize: none;
+  margin-bottom: 5px;
+}
+
+.Note .DescriptionInput::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Note .DescriptionInputDark::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.Note .CheckboxContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  align-items: center;
+}
+
+.Note .CheckboxContainer .Checkbox {
+  width: 24px;
+  height: 24px;
+  color: #da552f;
+}
+
+.Note .CheckboxContainer .CheckboxLabel {
+  border: 0;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: transparent;
+  margin-left: 2px;
+  width: 550px;
+}
+
+.Note .CheckboxContainer .DeleteCheckbox {
+  border: 0;
+  vertical-align: middle;
+  background-color: transparent;
+  cursor: pointer;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.87);
+  transition: opacity 0.2s;
+  height: 15px;
+}
+
+.Note .CheckboxContainer .DeleteCheckbox:hover {
+  opacity: 0.6;
+}
