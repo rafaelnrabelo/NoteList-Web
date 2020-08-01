@@ -16,7 +16,7 @@
   </a>
   <br/>
   <br/>
-  <img src="https://user-images.githubusercontent.com/55251721/87205886-d7f66980-c2de-11ea-8c30-c469dbbf911f.png" width=750 />
+  <img src="https://user-images.githubusercontent.com/55251721/87205886-d7f66980-c2de-11ea-8c30-c469dbbf911f.png" />
 </h2>
 
 ## Features
